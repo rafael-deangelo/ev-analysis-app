@@ -65,6 +65,20 @@
     <div class="container mt-4">
         <h1 class="text-center mb-4">Resultados da Análise</h1>
 
+
+        <!-- Seleção de Classificador -->
+    <div class="mt-4">
+        <form action="{{ url_for('select_classifier') }}" method="POST" class="d-flex justify-content-center align-items-center">
+            <label for="classifier" class="me-2">Escolha um classificador:</label>
+            <select id="classifier" name="classifier" class="form-select w-auto me-2">
+                {% for key, name in supported_classifiers.items() %}
+                    <option value="{{ key }}" {% if classifier_name == key %}selected{% endif %}>{{ name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+        </form>
+    </div>
+
         <!-- Configuração de Hiperparâmetros -->
 <div class="card shadow-sm mt-4">
     <div class="card-header text-center">
@@ -138,19 +152,7 @@
             </div>
         </div>
 
-        <!-- Seleção de Classificador -->
 
-    <div class="mt-4">
-        <form action="{{ url_for('select_classifier') }}" method="POST" class="d-flex justify-content-center align-items-center">
-            <label for="classifier" class="me-2">Escolha um classificador:</label>
-            <select id="classifier" name="classifier" class="form-select w-auto me-2">
-                {% for key, name in supported_classifiers.items() %}
-                    <option value="{{ key }}" {% if classifier_name == key %}selected{% endif %}>{{ name }}</option>
-                {% endfor %}
-            </select>
-            <button type="submit" class="btn btn-primary">Atualizar</button>
-        </form>
-    </div>
 
         <!-- Tabela -->
         <div class="card shadow-sm mt-5">

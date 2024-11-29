@@ -7,6 +7,13 @@
         /* Estilização adicional */
         body {
             background-color: #f4f6f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .content {
+            flex: 1;
         }
         .card {
             border-radius: 15px;
@@ -35,6 +42,9 @@
         }
         footer {
             background-color: #2f3542;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
         }
     </style>
 </head>
@@ -47,11 +57,11 @@
     </nav>
 
     <!-- Container Principal -->
-    <div class="container mt-5">
+    <div class="container content mt-5">
         <div class="card shadow-lg">
             <!-- Cabeçalho do Card -->
             <div class="card-header text-center">
-                <h3 class="mb-0">⚠️ O Dataset contém valores nulos</h3>
+                <h3 class="mb-0">⚠️ Atenção!</h3>
             </div>
 
             <!-- Corpo do Card -->
@@ -82,7 +92,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-white text-center py-3 mt-5">
+    <footer>
         <p class="mb-0">🚗 EV Analysis App &copy; 2024</p>
     </footer>
 </body>
