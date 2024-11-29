@@ -25,6 +25,14 @@ Uma breve descrição do que o projeto faz.
 ### Implementar Gráficos Interativos
 - pip install plotly
 
+### Instalar o Pacote
+pip install xgboost
+pip show xgboost
+
+### biblioteca reportlab esteja instalada para gerar o PDF e usar o flask-send-file para download.
+pip install reportlab flask
+
+
 
 
 ## Validações
